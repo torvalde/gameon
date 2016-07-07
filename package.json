@@ -1,0 +1,19 @@
+{
+  "name": "webpack-pixi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+  },
+  "author": "Ulrik Einarson",
+  "license": "MIT",
+  "dependencies": {
+    "brfs": "^1.4.1",
+    "json-loader": "^0.5.4",
+    "pixi.js": "^3.0.8",
+    "transform-loader": "^0.2.3",
+    "webpack": "^1.12.9"
+  }
+}
