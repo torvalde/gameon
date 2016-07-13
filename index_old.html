@@ -5,19 +5,12 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <style>
-        html {
-            box-sizing: border-box;
-        }
-        *, *:before, *:after {
-            box-sizing: inherit;
-        }
         body {
-            background: #55BB45;
+            background: white;
             margin: 0;
-            text-align: center;
-            overflow-x:hidden;
             padding: 0;
-            height: 1000px;
+            overflow: hidden;
+            text-align: center;
         }
 
         body.loading {
@@ -57,9 +50,7 @@
         }
 
         @keyframes count {
-            100% {
-                background-position: 0 -4950px;
-            }
+            100% { background-position: 0 -4950px; }
         }
 
         body.loading.done main {
@@ -76,7 +67,7 @@
             height: 300px;
             position: absolute;
             left: calc(50% - 150px);
-            top: 400px;
+            bottom: 34px;
             border-radius: 150px;
         }
 
@@ -86,7 +77,7 @@
             height: 368px;
             position: absolute;
             left: calc(50% - 184px);
-            top: 234px;
+            bottom: 0;
         }
 
         body.loading .star {
@@ -96,6 +87,16 @@
 
         body.loading.done .star {
             transform: scale(1) rotate(-180deg);
+        }
+
+        section {
+            height: 50%;
+            min-height: 400px;
+            width: 100%;
+            min-width: 300px;
+            position: relative;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         #background {
@@ -108,7 +109,7 @@
         }
 
         body.loading #background {
-            background: #55BB45;
+            background: #41B53F;
             pointer-events: auto;
         }
 
@@ -121,236 +122,201 @@
             display: block;
             transition-duration: 500ms;
         }
-
         body.open {
             background: white;
         }
-
         body.open .diamond {
             transform: scale(0);
         }
 
-        .number {
-            background: url('numbers.png') no-repeat top left;
-            width: 255px;
-            height: 550px;
-        }
+        .number { background: url('numbers.png') no-repeat top left; width: 255px; height: 550px;  }
 
-        body .number.single, body .number.double {
+        body .number.single,body .number.double {
             display: block;
             position: absolute;
             top: -125px;
             transform: scale(.225);
         }
-
         body .number.single {
             left: 55px;
         }
-
         body .number.double {
             background-position: 0 -4400px;
             left: -10px;
         }
-
-        body.loading .number.single, body.loading .number.double {
+        body.loading .number.single,body.loading .number.double {
             background-position: 0 0;
             transform: scale(.03);
             display: block;
             position: absolute;
             top: -255px;
         }
-
         body.loading .number.single {
             left: -103px;
         }
-
         body.loading .number.double {
             left: -112px;
         }
-
         main.n00 .number.double, main.n0 .number.single {
             background-position: 0 0;
         }
-
         main.n10 .number.double, main.n1 .number.single {
-            background-position: 0 -550px;
+         background-position: 0 -550px;
         }
-
         main.n20 .number.double, main.n2 .number.single {
             background-position: 0 -1100px;
         }
-
         main.n30 .number.double, main.n3 .number.single {
             background-position: 0 -1650px;
         }
-
         main.n40 .number.double, main.n4 .number.single {
             background-position: 0 -2200px;
         }
-
         main.n50 .number.double, main.n5 .number.single {
             background-position: 0 -2750px;
         }
-
         main.n60 .number.double, main.n6 .number.single {
             background-position: 0 -3300px;
         }
-
         main.n70 .number.double, main.n7 .number.single {
             background-position: 0 -3850px;
         }
-
         main.n80 .number.double, main.n8 .number.single {
             background-position: 0 -4400px;
         }
-
         main.n90 .number.double, main.n9 .number.single {
             background-position: 0 -4950px;
         }
-
-        .title {
-            width: 700px;
-            height: 400px;
+        .years {
+            width: 320px;
+            height: 160px;
             position: relative;
             display: inline-block;
-            margin-top: 40px;
         }
-
-        .title video {
+        .years video {
             position: absolute;
             top: 0;
             left: 0;
-            background: #55BB45;
+            background: #41B53F;
             pointer-events: none;
-            width: 700px;
-            height: 400px;
         }
-
-        .title img {
+        .years img {
             position: absolute;
             top: 0;
             left: 0;
             pointer-events: none;
         }
-
         #map {
-            border: 1px dotted #F39200;
-            transform: rotate(-960deg) scale(0);
+            border: 3px solid #41B53F;
+            transform: rotate(10deg);
             width: 400px;
             height: 400px;
             position: absolute;
             bottom: 10px;
             right: -20px;
-            transition-duration: 1.3s;
-            transition-timing-function: ease-out;
-            transition-delay: .9s;
         }
-
-        #map.show {
-            transform: rotate(10deg) scale(1);
-        }
-
         #map img {
             width: 100%;
             height: 100%;
         }
-
-        #info {
+        .info {
             position: absolute;
-            top: 560px;
-            left: 20px;
+            top:30px;
+            left:20px;
             font-family: 'Poiret One', cursive;
-            color: #00023D;
+            color:black;
             font-size: 32px;
             text-align: left;
-            background: white;
-            border: 0 solid #00023D;
-            border-radius: 2px;
-
-            max-height: 0;
-            max-width: 0;
-            overflow: hidden;
-            transition: max-width .3s linear, max-height .7s ease-out;
-            transition-delay: 0s, .3s;
-            padding: 0;
         }
-
-        #info.show {
-            padding: 20px;
-            border-width: 2px;
-            max-width: 500px;
-            max-height: 1000px;
-        }
-
-        #info h2 {
+        .info h2 {
             font-size: 64px;
             margin: 0 0 10px;
             padding: 0;
             font-weight: normal;
         }
-
-        #info h2 .firstLetter {
-            font-size: 104px;
-        }
     </style>
-    <!-- AddEvent -->
-    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 </head>
 <body class="loading">
 <script>
-    window.fbAsyncInit = function () {
+    window.fbAsyncInit = function() {
         FB.init({
-            appId: '1139699719426319',
-            xfbml: true,
-            version: 'v2.6'
+            appId      : '1139699719426319',
+            xfbml      : true,
+            version    : 'v2.6'
         });
     };
 
-    (function (d, s, id) {
+    (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-<div class='title'>
-    <img src="chandjan.png" width="700" height="400" title="Chand and Jan"/>
-    <video src="chandjan.mp4" preload="auto" width="700" height="400"></video>
-</div>
-<div class="star"></div>
-<main title="00">
-    <span class="number double"></span><span class="number single"></span>
-</main>
 <a href="https://www.google.com/maps/dir//Norwegian+Museum+of+Science+and+Technology,+Kjelsåsveien+143,+0491+Oslo,+Norway/" id="map" target="_blank" title="Click the map to get directions...">
     <img src="http://maps.googleapis.com/maps/api/staticmap?center=Norwegian+Museum+of+Science+and+Technology,+Kjelsåsveien+143,+0491+Oslo,+Norway&zoom=12&scale=2&size=400x400&maptype=roadmap&key=AIzaSyDc6LzVMW1LnaEcQIVqQfnXUaJId4xHq-g&format=png&visual_refresh=true&markers=size:small%7Ccolor:0xff0000%7Clabel:0%7CNorwegian+Museum+of+Science+and+Technology,+Kjelsåsveien+143,+0491+Oslo,+Norway" alt="Google Map of Norwegian+Museum+of+Science+and+Technology,+Kjelsåsveien+143,+0491+Oslo,+Norway">
 </a>
-<div id="info">
-    <h2><span class="firstLetter">B</span>irthday Party</h2>
-    29 October<br/>
+<div class="info">
+    <h2>Birthdayparty</h2>
+    23 October<br/>
     Norwegian Museum of<br/>
     Science and Technology<br/><br/>
     From 17:00 till the end
 </div>
+<div id="background"></div>
+<div id="backgroundOdd"></div>
+<section>
+    <div class="star"></div>
+    <main title="00">
+        <span class="number double"></span><span class="number single"></span>
+    </main>
+</section>
+<div class='years'>
+    <img src="years.png" width="320px" height="160px" title="years of Chand and Jan"/>
+    <video src="years.mp4" preload='auto'/>
+</div>
 <script>
-    var video = document.querySelector('.title video');
+    var itemWidth = 20; //Math.ceil(window.innerWidth / 5);
+    var rowHeight = 30; //Math.ceil(rowWidth * 1.5);
+    var offsetTop = -rowHeight/2;
+    while (offsetTop*(window.innerWidth/100) < window.innerHeight) {
+        var offsetLeft = 0;
+        for (var i = 0; i < 5; i++) {
+            var e = document.createElement('div');
+            e.className = "diamond";
+            e.style.top = offsetTop+'vw';
+            e.style.left = offsetLeft+'vw';
+            document.getElementById('background').appendChild(e);
+            offsetLeft += itemWidth;
+        }
+        offsetLeft = -itemWidth/2;
+        offsetTop += rowHeight/2;
+        for (var i = 0; i < 6; i++) {
+            var e = document.createElement('div');
+            e.className = "diamond";
+            e.style.top = offsetTop+'vw';
+            e.style.left = offsetLeft+'vw';
+            document.getElementById('background').appendChild(e);
+            offsetLeft += itemWidth;
+        }
+        offsetTop += rowHeight/2;
+    }
+    var video = document.querySelector('.years video');
     var main = document.querySelector('body main');
     var double = main.querySelector('.number.double');
     var single = main.querySelector('.number.single');
 
-    var countTo40 = function (i, after) {
-        i++;
-        if (i <= 40) {
-            var one = i % 10;
-            var ten = Math.floor(i / 10) + '0';
-            main.className = 'n' + ten + ' n' + one;
+    var countTo80 = function(i, after) {
+            i+=10;
+        if (i<=80) {
+            var one = i%10;
+            var ten = Math.floor(i/10)+'0';
+            main.className = 'n'+ten+' n'+one;
             main.title = i;
-            setTimeout(function () {
-                countTo40(i, after);
-            }, 108);
+            setTimeout(function() {
+                countTo80(i, after);
+            }, 160);
         } else {
             after();
         }
@@ -358,28 +324,25 @@
 
     var afterZoom = function () {
         document.body.removeEventListener('transitionend', afterZoom, false);
-        video.play();
-        countTo40(0, function () {
-
+        countTo80(0, function() {
+            video.play();
         });
     };
 
-    video.addEventListener('loadeddata', function () {
+    video.addEventListener('loadeddata', function() {
         document.body.addEventListener('transitionend', afterZoom, false);
         document.body.classList.add('done');
         document.body.classList.add('zoom');
     }, false);
 
-    video.addEventListener('ended', function () {
+    video.addEventListener('ended', function() {
         video.parentNode.removeChild(video);
-        document.getElementById('map').className='show';
-        document.getElementById('info').className='show';
-        setTimeout(function () {
+        setTimeout(function() {
             // document.body.className='open';
-        }, 300);
+        },300);
     }, false);
 
-    video.defaultPlaybackRate = 2.0;
+    video.defaultPlaybackRate = 3.0;
     video.load();
 </script>
 </body>
