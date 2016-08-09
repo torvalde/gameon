@@ -505,9 +505,6 @@
         <strong>0539.52.08928</strong>, you will receive a confirmation email after the payment in received, if not please contact us.
         </p>
         <p>
-            You can olso pay with vips to ....
-        </p>
-        <p>
             What you will get for your contribution is a great party, and open access to the technical museum and the "game on" exhibit.
             We also have a buffet style dinner and a bar, and some small sunrises for you during the evening.
         </p>
@@ -527,7 +524,7 @@
 </div>
 <script>
     window.onpopstate = function(event) {
-        if (event.state.signup) {
+        if (event.state && event.state.signup) {
             document.body.classList.add('signup');
         } else {
             document.body.classList.remove('signup');
