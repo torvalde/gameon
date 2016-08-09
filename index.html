@@ -526,6 +526,13 @@
     </div>
 </div>
 <script>
+    window.onpopstate = function(event) {
+        if (event.state.signup) {
+            document.body.classList.add('signup');
+        }
+        window.scrollTo(0, 0);
+    };
+
     function signup(event) {
         event.preventDefault();
         document.body.classList.add('signup');
