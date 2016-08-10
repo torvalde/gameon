@@ -19,7 +19,7 @@
             text-align: center;
             overflow-x: hidden;
             padding: 0;
-            height: 1100px;
+            height: 1300px;
         }
 
         body.loading {
@@ -248,6 +248,8 @@
             text-decoration: none;
             color: #00023D;
             margin-left: 220px;
+            font-family: Sans-Serif;
+            font-size: 16px;
         }
 
         #map.show {
@@ -393,6 +395,22 @@
             top: 100px;
             left: 50px;
         }
+        #costume {
+            position: absolute;
+            top: 720px;
+            left:50%;
+            color: #00023D;
+            font-family: Sans-Serif;
+            font-size: 16px;
+            max-width: 400px;
+            margin-left: 100px;
+            opacity: 0;
+            transition-delay: 2s;
+            transition: opacity .2s linear;
+        }
+        #costume.show {
+            opacity: 1;
+        }
     </style>
     <!-- AddEvent -->
     <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
@@ -441,7 +459,7 @@
     Norwegian Museum of<br/>
     Science and Technology<br/><br/>
     From 17:00 till the end<br/><br/>
-    Videogame themeparty. You are encouraged to dress in Videogame related attire.<br/><br/>
+    <br/><br/>
     <div title="Add to Calendar" class="addeventatc">
         Add to Calendar
         <span class="start">10/29/2016 17:00</span>
@@ -452,11 +470,15 @@
         <span class="location">Norwegian Museum of Science and Technology</span>
         <span class="organizer">Chand & Jan</span>
         <span class="organizer_email">torvalde@gmail.com</span>
-        <span class="facebook_event">https://www.facebook.com/events/1711556715760706</span>
+        <span class="facebook_event">https://www.facebook.com/events/162722640819123/</span>
         <span class="all_day_event">false</span>
         <span class="date_format">MM/DD/YYYY</span>
     </div>
 </div>
+<figure id="costume">
+    <img src="costume.png" alt="Zelda costume">
+    <figcaption>Videogame themeparty. You are encouraged to dress in Videogame related attire.</figcaption>
+</figure>
 <a href="/signup.html" id="signup" onClick="signup(event)">
 <svg width="195.6px" height="84.4px" viewBox="0 0 978 422" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="none" fill="blue">
     <path id="signup_bg"  d="M161.005562,0 L816.994438,0 C905.915355,0 978,94.4679178 978,211 C978,327.532082 905.915355,422 816.994438,422 L161.005562,422 C72.0846454,422 0,327.532082 0,211 C0,94.4679178 72.0846454,0 161.005562,0 Z"></path>
@@ -501,12 +523,15 @@
         <a href="mailto:don_chand@chasvag.com">Chand Svare Ghei</a> or <a href="mailto:j.h.bleka@fys.uio.no">Jan Håvard Bleka</a>,
         we probably just sent your invitation to the wrong address.</p>
         <p>
-        To make this party a great party we ask you to contribute with 300 NOK, you can transfer the money to the account:
-        <strong>0539.52.08928</strong>, you will receive a confirmation email after the payment in received, if not please contact us.
+            To help making this party a great party we ask you to contribute 300 NOK, you can transfer the money to the account:
+            <strong>0539.52.08928</strong> (IBAN NO9605395208928) or you can VIPPS Chand Svare Ghei to the same account
+            (40049150), afterwards send us both a message and you will receive a confirmation email after the payment in received.
+            Once the contribution is made, you will be on our guest list. We have a limited amount of tickets, so get your ticket
+            early to be sure to get one.
         </p>
         <p>
-            What you will get for your contribution is a great party, and open access to the technical museum and the "game on" exhibit.
-            We also have a buffet style dinner and a bar, and some small sunrises for you during the evening.
+            What you will get for your contribution is a great party, open access to the technical museum from 5 pm to 12 pm
+            including the "game on" exhibit, a welcome drink, entertainment and a dinner.
         </p>
         <p>
             We are trying to gather som pictures from the life of Chand & Jan, for the party. If you have some fun,
@@ -515,7 +540,7 @@
             (You need to create a free Jottacloud account to add new pictures.)
         </p>
         <p>
-        Please join our facebook group: <a href="https://www.facebook.com/events/1711556715760706" target="_blank">https://www.facebook.com/events/1711556715760706</a>
+        Please join our facebook group: <a href="https://www.facebook.com/events/162722640819123/" target="_blank">https://www.facebook.com/events/162722640819123/</a>
         </p>
         <p>
             We hope to see you the 29th of October, 17:00, at the Norwegian Museum of Science and Technology.
@@ -591,6 +616,7 @@
                 video.parentNode.removeChild(video);
                 document.getElementById('map').className = 'show';
                 document.getElementById('info').className = 'show';
+                document.getElementById('costume').className = 'show';
                 document.getElementById('signup').classList.add('show');
             }, false);
 
